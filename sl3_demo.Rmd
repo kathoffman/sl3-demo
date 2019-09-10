@@ -117,7 +117,7 @@ stack <- make_learner_stack(
 
 ## Choose a metalearner
 
-we'll keep it simple here and use a generalized linear model.
+There are many models we can choose from but we'll keep it simple and use a generalized linear model. We are again using the `make_learner()` function.
 
 ```{r}
 metalearner <- make_learner(Lrnr_glm)
@@ -162,11 +162,11 @@ sl_fit$predict(washb_task) %>% head()
 
 # What else?!
 
-- Use `make_learner` to modify the parameters of your base learners or metalearner. Ex: `lrnr_RF_200trees <- make_lrnr(Lrnr_randomForest, ntree = 200)`
+- Use `make_learner()` to customize the parameters of your base learners or metalearner. Ex: `lrnr_RF_200trees <- make_lrnr(Lrnr_randomForest, ntree = 200)`
 
 - Cross validate your entire ensembled superlearner using the cross-validation package `origami`, written by the same authors as `sl3`. Or just hold out a testing data set to evaluate performance.
 
-- Add many layers to your superlearner and organize it into a "pipeline" with the `Pipeline` function.
+- Add many layers to your superlearner and organize it into a "pipeline"
 
 **For more demos, check out the following teaching materials from the authors of `sl3`.** My tutorial uses one of their example data sets in case you'd like to extend your learning via their training resources.
 
