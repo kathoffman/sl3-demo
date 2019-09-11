@@ -162,7 +162,7 @@ sl_fit$predict(washb_task) %>% head()
 
 # What else?!
 
-- Use `make_learner()` to customize the parameters of your base learners or metalearner. Ex: `lrnr_RF_200trees <- make_lrnr(Lrnr_randomForest, ntree = 200)`
+- Use `make_learner()` to customize the parameters of your base learners or metalearner. Ex: `lrnr_RF_200trees <- make_learner(Lrnr_randomForest, ntree = 200)`
 
 - Cross validate your entire ensembled superlearner using the cross-validation package `origami`, written by the same authors as `sl3`. Or just hold out a testing data set to evaluate performance.
 
