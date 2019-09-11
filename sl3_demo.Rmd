@@ -40,7 +40,7 @@ set.seed(7)
 
 ## Load the data
 
-Using the WASH Benefits data set we will predict children in rural Kenya and Bengladesh's weight to height z-scores from their housing and sanitation states.
+We will predict children in rural Kenya and Bengladesh's weight to height z-scores using the WASH Benefits data set.
 
 ```{r}
 washb_data <- read.csv("https://raw.githubusercontent.com/tlverse/tlverse-data/master/wash-benefits/washb_data.csv")
@@ -49,7 +49,7 @@ washb_data <- read.csv("https://raw.githubusercontent.com/tlverse/tlverse-data/m
 ## View the data
 
 ```{r}
-washb_data %>% head(n = 20)
+washb_data
 ```
 
 ## Specify outcome and predictors
@@ -83,7 +83,7 @@ washb_task
 
 # Explore `sl3`'s options
 
-There's a ton of different aspects of model fitting `sl3` has the capabilities to address!
+There's a ton of different aspects of model fitting `sl3` has the capabilities to address! You can learn more about each here: https://tlverse.org/sl3/reference/index.html
 
 ```{r}
 sl3_list_properties()
@@ -97,7 +97,7 @@ We'll need to pick out base learners for our stack, as well as pick a metalearne
 sl3_list_learners("continuous") 
 ```
 
-You'll notice each learner starts with `Lrnr` and seems to correspond to a package in `R`. You can learn about each learner here: https://tlverse.org/sl3/reference/index.html
+You'll notice each learner starts with `Lrnr` and seems to correspond to a package in `R`.
 
 # Superlearner setup!
 
@@ -162,7 +162,7 @@ sl_fit$predict(washb_task) %>% head()
 
 # What else?!
 
-- Use `make_learner()` to customize the parameters of your base learners or metalearner. Ex: `lrnr_RF_200trees <- make_learner(Lrnr_randomForest, ntree = 200)`
+- Use `make_learner()` to customize the parameters of your base learners or metalearner. Ex: `lrnr_RF_200trees <- make_lrnr(Lrnr_randomForest, ntree = 200)`
 
 - Cross validate your entire ensembled superlearner using the cross-validation package `origami`, written by the same authors as `sl3`. Or just hold out a testing data set to evaluate performance.
 
