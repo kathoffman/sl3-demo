@@ -1,4 +1,7 @@
 # sl3-demo
+
+[![DOI](https://zenodo.org/badge/207056995.svg)](https://zenodo.org/badge/latestdoi/207056995)
+
 A demo of the R package sl3 for R-Ladies NYC Sept. 2019 Meetup
 
 Slides are available in [animated](superlearning_slides_animated.pdf) or [non-animated](superlearning_slides_no_animation.pdf)  format and give an overview of the three main ensemble learning techniques: bagging, boosting, and stacking/superlearning.
